@@ -315,14 +315,10 @@ bot.catch((err, ctx) => {
 async function startBot() {
   await initGoogleSheets();
   
-  bot.launch({
-    webhook: {
-      domain: process.env.WEBHOOK_DOMAIN,
-      port: process.env.PORT || 3000
-    }
-  });
+  // Mode polling (plus simple, pas besoin de webhook)
+  bot.launch();
   
-  console.log('🤖 Bot VTC Assistant démarré !');
+  console.log('🤖 Bot VTC Assistant démarré en mode polling !');
   console.log(`📝 ${authorizedGroups.size} groupe(s) autorisé(s)`);
 }
 
