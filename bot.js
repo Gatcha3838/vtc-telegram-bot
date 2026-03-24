@@ -55,7 +55,7 @@ async function getDriversFromSheet() {
   try {
     const response = await sheetsAPI.spreadsheets.values.get({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: 'Feuille 1!A2:G1000'
+      range: 'Chauffeurs!A2:G1000'
     });
     
     const rows = response.data.values || [];
